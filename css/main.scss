@@ -83,7 +83,7 @@
             align-items: center;
             .list {
                 display: flex;
-                height: 100%;
+                height: 90px;
                 li {
                     padding: 0 60px;
                     height: 100%;
@@ -324,14 +324,18 @@ body.open {
     color: $main-color;
     font-size: 20px;
     opacity: 1;
+    display: none;
     @include vendor-prefix(transition, all 0.3s);
     &:hover {
         color: $white-color;
         @include vendor-prefix(transform, rotate(360deg));
         opacity: 1;
     }
-    @include breakpoints(md) {
-        display: none;
+    @include breakpoints(sm) {
+        display: block;
+    }
+    @include breakpoints(xs) {
+        display: block;
     }
 }
 // Start Slider 
@@ -599,7 +603,7 @@ body.open {
         // display: flex;
         // justify-content: space-between;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
         gap: 30px;
         .main {
             text-align: right;
@@ -614,7 +618,11 @@ body.open {
                     padding: 0;
                     a {
                         color: $white-color;
-                        font-size: 13px;
+                        font-size: 15px;
+                        @include vendor-prefix(transition, all 0.4s);
+                        &:hover {
+                            color: $main-color;
+                        }
                     }
                 }
             }
@@ -624,8 +632,41 @@ body.open {
         display: flex;
         flex-direction: row;
         a {
-            color: $main-color;
-            padding: 0 5px;
+            color: $main-color !important;
+            padding: 10px 10px;
+            @include vendor-prefix(transition, all 0.4s);
+                &:hover {
+                    color: $white-color !important;
+                }
+        }
+    }
+    input {
+        outline: none;
+        padding: 7px 10px;
+        background-color: $white-color;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        max-width: 100%;
+        &:foucs {
+            outline: none;
+            border: 1px solid $main-color-alt;
+        }
+    }
+    .send {
+        background: #ff5e00;
+        max-width: 95%;
+        padding: 8px 0 !important;
+        font-size: 16px !important;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 15px;
+        a {
+            color: $white-color !important;
+            text-align: center;
         }
     }
     .share {
@@ -657,6 +698,10 @@ body.open {
                 a {
                     color: $main-color;
                     font-size: 16px;
+                    @include vendor-prefix(transition, all 0.4s);
+                    &:hover {
+                        color: $white-color !important;
+                    }
                 }
             }
         }
@@ -672,7 +717,40 @@ body.open {
         a {
             color: $white-color;
             font-weight: 400;
+            @include vendor-prefix(transition, all 0.4s);
+            &:hover {
+                color: $main-color;
+            }
         }
     }
 }
 // End footer
+
+// .slider .swiper-button-prev:after, .slider .swiper-rtl .swiper-button-next:after {
+//     content: "\f053";
+// }
+// .slider .swiper-button-next:after, .slider .swiper-button-prev:after {
+//     font-family: "Font Awesome 5 Free";
+//     font-size: var(--swiper-navigation-size);
+//     text-transform: none !important;
+//     letter-spacing: 0;
+//     font-variant: initial;
+//     line-height: 1;
+//     font-weight: 900;
+//     font-size: 20px;
+//     color: #fff;
+//     padding: 40px 12px;
+//     background-color: #353743;
+// }
+// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
+//     left: 2px;
+//     right: auto;
+// }
+// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
+//     left: auto;
+//     right: 2px;
+// }
+// .slider .swiper-button-next, .slider .swiper-button-prev {
+//     z-index: 999;
+// }
+

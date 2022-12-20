@@ -18,11 +18,20 @@ window.onscroll = function() {
     }
 };
 
-// window.onclick = function() {
-//     scroll({
-//         top: 0,
-//         behavior: 'smooth'
-//     });
-// }
+btn.onclick = function() {
+   scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 
 const toggleMenuOpen = () => document.body.classList.toggle("open");
+
+var swiper = new Swiper(".img", {
+    cssMode: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
+});
