@@ -1,0 +1,100 @@
+@use "sass/index" as * ;
+
+
+.span {
+    color: $red;
+    // font-size: $font-size;
+}
+
+.section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    span {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+.section-1 {
+    background-color: rgb(92, 48, 16);
+    @include vendor-prefix('box-sizing', 'border-box');
+}
+.section-2 {
+    background-color: rgb(17, 56, 22);
+}
+.section-3 {
+    background-color: rgb(114, 30, 210);
+}
+.section-4 {
+    background-color: rgb(65, 20, 62);
+}
+.color {
+    font-size: 30px;
+    color: $red;
+    box-shadow: 1px 1px 1px 1px green;
+    background-color:red;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    -moz-transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -o-transform: translateY(60px);
+    animation: fadein 0.8s infinite linear;
+    -webkit-animation: fadein 0.9s  linear;
+}
+
+.btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(185, 82, 82);
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+@keyframes fadein {
+    0% , 100% {
+        transform: translateY(30);
+        -webkit-transform: translateY(30);
+        -moz-transform: translateY(30);
+        -ms-transform: translateY(30);
+        -o-transform: translateY(30);
+        opacity: 1;
+}    
+50% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    opacity: 0.5;
+}
+}
+
+
+@mixin replace-text($image, $x: 50%, $y: 60% , $test:999) {
+  text-indent: $test;
+  overflow: $image;
+  text-align: $x;
+
+  background: {
+    image: $image;
+    repeat: no-repeat;
+    position: $x $y;
+  }
+}
+
+.mail-icon {
+  @include replace-text(url("/images/mail.svg"), 10% , 80% );
+}
