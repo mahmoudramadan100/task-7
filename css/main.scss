@@ -1,100 +1,375 @@
-@use "sass/index" as * ;
+@use "sass/index" as *;
 
 
-.span {
-    color: $red;
-    // font-size: $font-size;
-}
+// .scroll-top {
+//     position: fixed;
+//     bottom: 20px;
+//     left: 10px;
+//     border: none;
+//     background-color: $main-color;
+//     color: $black-color;
+//     padding: 10px;
+//     cursor: pointer;
+//     display: none;
+// }
 
-.section {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    span {
-        color: #fff;
-        font-size: 3rem;
-        text-align: center;
+// Start Up-navbar
+.up-navbar {
+    background-color: #f1f5f7;
+    border-bottom: 1px solid #b2b4b5;
+    .container {
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+            text-align: center;
+            width: calc(100% - 250px);
+            h3 {
+                text-align: center;
+                color: $main-color;
+                font-weight: 700;
+                font-size: 15px;
+            }
+        }
+        .link {
+            color: $black-color;
+            font-size: 14px;
+            a {
+                color: $black-color;
+                font-size: 14px;
+            }
+            .active {
+                color: $main-color;
+            }
+        }
     }
 }
-.section-1 {
-    background-color: rgb(92, 48, 16);
-    @include vendor-prefix('box-sizing', 'border-box');
-}
-.section-2 {
-    background-color: rgb(17, 56, 22);
-}
-.section-3 {
-    background-color: rgb(114, 30, 210);
-}
-.section-4 {
-    background-color: rgb(65, 20, 62);
-}
-.color {
-    font-size: 30px;
-    color: $red;
-    box-shadow: 1px 1px 1px 1px green;
-    background-color:red;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transform: translateY(60px);
-    -webkit-transform: translateY(60px);
-    -moz-transform: translateY(60px);
-    -ms-transform: translateY(60px);
-    -o-transform: translateY(60px);
-    animation: fadein 0.8s infinite linear;
-    -webkit-animation: fadein 0.9s  linear;
-}
-
-.btn {
+// End Up-navbar
+// STart Navbar
+.navbar {
+    background-color: $white-color;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(185, 82, 82);
-    color: #fff;
-    padding: 20px;
-    cursor: pointer;
-    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+     @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px); 
+    .container {
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        .logo {
+           max-height: 110px;
+           max-width: 110px;
+           object-fit: contain;
+        }
+        .navbar-menu {
+            display: flex;
+            justify-content: space-between;
+            height: 90px;
+            align-items: center;
+            .list {
+                display: flex;
+                height: 100%;
+                li {
+                    padding: 0 60px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+                a {
+                    color: #000;
+                    font-size: 17px;
+                    font-weight: 700;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    @include vendor-prefix( transation, all 0.4s); 
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 0;
+                        height: 4px;
+                        background-color: $main-color;
+                        @include vendor-prefix( transition, all 0.4s);
+                    }
+                    &:hover::after {
+                       width: 100%;
+                    }
+                }
+            }
+            .list-call {
+                display: flex;
+                gap: 10px;
+                margin: 0;
+                padding: 0;
+                li {
+                    padding: 3px 12px;
+                    background-color: $main-color;
+                    border-radius: 50px;
+                    @include vendor-prefix( transition, all 0.4s);
+                    a {
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 500;
+                     }
+                     &:hover {
+                        transform: translateY(-5px);
+                     }
+                }
+                li:first-child {
+                    background: linear-gradient(90deg, rgba(255,154,16,1) 23%, rgba(255,107,12,1) 58%);
+                }
+               
+                 
+            }
+
+        }
+        
+    }
 }
-
-@keyframes fadein {
-    0% , 100% {
-        transform: translateY(30);
-        -webkit-transform: translateY(30);
-        -moz-transform: translateY(30);
-        -ms-transform: translateY(30);
-        -o-transform: translateY(30);
-        opacity: 1;
-}    
-50% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    opacity: 0.5;
+.navbar-scroll {
+    top: 0;
+    transition: all 0.3s;
+    z-index: 999;
 }
+// Start Slider 
+.slider {
+    padding: 140px 0 40px;
+    .container {
+        display: flex;
+        .text {
+            width: 50%;
+            padding: 50px 30px 0 ;
+            text-align: right;
+            h1 {
+                font-size: 25px;
+                color: #000;
+                width: 75%;
+                margin: 0 auto;
+                line-height: 1.5;
+                font-weight: 700;
+            }
+            .choose {
+                padding-right: 50px;
+                padding-top: 35px;
+            }
+            h4 {
+                font-size: 22px;
+                color: $main-color;
+                margin-bottom: 15px;
+            }
+            ul {
+                margin-top: 20px;
+                display: flex;
+                li:first-child {
+                    border-right: 1px solid #8a8a8a;
+                }
+                li {
+                    padding: 0 15px;
+                    text-align: center;
+                    border-left: 1px solid #8a8a8a;
+                    a {
+                        color: #a3a3a3;
+                        font-size: 33px;
+                        display: block;
+                        @include vendor-prefix( transition, all 0.4s);
+                        &:hover {
+                            color: $main-color-alt;
+                        } 
+                    }
+                    span {
+                        text-align: center;
+                        color: #a3a3a3 ;
+                        font-size: 12px;
+                    }
+                }
+                .active {
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+        .img {
+            width: 50%;
+            background: url(../img/bg-slider.png) no-repeat;
+            background-size: contain;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
 }
-
-
-@mixin replace-text($image, $x: 50%, $y: 60% , $test:999) {
-  text-indent: $test;
-  overflow: $image;
-  text-align: $x;
-
-  background: {
-    image: $image;
-    repeat: no-repeat;
-    position: $x $y;
-  }
+// End Slider
+// Start Comming Soon
+.coming-soon {
+    padding: 70px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        .soon {
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .add {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            gap: 15px;
+            padding: 10px 0;
+            a {
+                color: $gray-color;
+                font-size: 16px;
+                @include vendor-prefix( transition, all 0.4s);
+                &:hover {
+                    color: $main-color;
+                }
+            }
+            .suggest {
+                background-color: #ff5e00;
+                color: $white-color;
+                font-size: 12px;
+                padding: 3px 10px;
+                border-radius: 8px;
+                font-weight: 500;
+                &:hover {
+                    color: $white-color;
+                    background-color: $main-color-alt;
+                }
+            }
+        }
+        .box {
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
+            h1 {
+                color: #ff5e00;
+                position: relative;
+                width: 90%;
+                height: 50%;
+                border-bottom: 3px solid $main-color;
+                border-left: 3px solid $main-color;
+                border-radius: 0 0 0 35px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 30px;
+                    left: -3px;
+                    width: 3px;
+                    background: #fff;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }
-
-.mail-icon {
-  @include replace-text(url("/images/mail.svg"), 10% , 80% );
+// End Comming-soon
+// Start Orader
+.order {
+    padding: 70px 0;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .box {
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
+            h1 {
+                color: #ff5e00;
+                position: relative;
+                width: 90%;
+                height: 50%;
+                border-bottom: 3px solid $main-color;
+                border-left: 3px solid $main-color;
+                border-radius: 0 0 0 35px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 30px;
+                    left: -3px;
+                    width: 3px;
+                    background: #fff;
+                    height: 20px;
+                }
+            }
+        }
+        p {
+            color: $main-color;
+            line-height: 1.5;
+            margin: 50px auto;
+            text-align: center;
+            font-size: 20px;
+            width: 80%;
+            span {
+                padding: 2px 6px;
+                border-radius: 50%;
+                background-color: #ff5e00;
+                color: #fff;
+                font-weight: 700;
+                line-height: 10px;
+                text-align: center;
+            }
+        }
+        .draw {
+            margin: 30px 0;
+            .shape {
+                background: #f8f8f8;
+                width: 140px;
+                height: 140px;
+                position: relative;
+                background: red;
+                box-sizing: border-box;
+                -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+                clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+                @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
+                
+                .one {
+                    width: 136px;
+                    height: 136px;
+                    position: absolute;
+                    left: 2px;
+                    top: 2px;
+                    background-color: #8a8a8a;
+                    -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+                    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+                    img {
+                        width: 45px;
+                        height: 45px;
+                        object-fit: contain;
+                        margin: 0 auto;
+                        text-align: center;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 30px;
+                    }
+                }
+            }
+        }
+    }
 }
