@@ -24,3 +24,5 @@ window.onscroll = function() {
 //         behavior: 'smooth'
 //     });
 // }
+
+const toggleMenuOpen = () => document.body.classList.toggle("open");
