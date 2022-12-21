@@ -550,7 +550,7 @@ body.open {
             display: flex;
             align-items: center;
             justify-content: center;
-            @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
+            // @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
             h1 {
                 color: $main-color;
                 position: relative;
@@ -600,6 +600,7 @@ body.open {
         }
         .draw {
             margin: 30px 0;
+            display: flex;
             .shape {
                 background: #f8f8f8;
                 width: 140px;
@@ -610,7 +611,6 @@ body.open {
                 -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
                 clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
                 @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
-
                 .one {
                     width: 136px;
                     height: 136px;
@@ -1047,10 +1047,27 @@ body.open {
             height: 100%;
             object-fit: contain;
         }
+        @include breakpoints(md) {
+            width: 100px;
+            height: 100px;
+           }
+           @include breakpoints(sm) {
+            width: 90px;
+            height: 90px;
+        }
         @include breakpoints(xs) {
             width: 75px;
             height: 75px;
         }
+       }
+       @include breakpoints(md) {
+        gap: 10px;
+       }
+       @include breakpoints(md) {
+        gap: 10px;
+       }
+       @include breakpoints(xs) {
+        gap: 10px;
        }
     }
     .card {
@@ -1070,8 +1087,17 @@ body.open {
                     @include breakpoints(xs){
                         font-size: 13px;
                     }
+                    @include breakpoints(xs){
+                        font-size: 11px;
+                    }
                 }
             }
+            @include breakpoints(sm) {
+                padding: 13px 0;
+               }
+               @include breakpoints(xs) {
+                padding: 12px 0;
+               }
         }
         .details {
             border: 1px solid $gray-color;
@@ -1111,6 +1137,12 @@ body.open {
                     font-size: 13px;
                 }
                }
+               @include breakpoints(sm) {
+                padding: 13px 0;
+               }
+               @include breakpoints(xs) {
+                padding: 12px 0;
+               }
         }
         .card-info {
             padding: 15px 10px;
@@ -1122,6 +1154,7 @@ body.open {
             h5 {
                 color: $black-color;
                 font-size: 16px;
+                border-bottom: 0;
             }
             .input {
                 display: flex;
@@ -1135,9 +1168,20 @@ body.open {
                         color: $black-color
                     }
                 }
+                @include breakpoints(sm) {
+                    flex-direction: column;
+                    width: 100%;
+                }
                 @include breakpoints(xs) {
                     flex-direction: column;
+                    width: 100%;
                 }
+            }
+            @include breakpoints(sm) {
+                flex-direction: column;
+            }
+            @include breakpoints(xs) {
+                flex-direction: column;
             }
         }
         .number {
@@ -1148,7 +1192,15 @@ body.open {
             border-bottom: 1px solid #a5a5a5 ;
             margin: 15px auto;
             &::placeholder {
-                color: $black-color
+                color: $black-color;
+            }
+            @include breakpoints(sm) {
+                padding: 0 5px;
+                width: 95%;
+            }
+            @include breakpoints(xs) {
+                padding: 0 5px;
+                width: 95%;
             }
         }
         
@@ -1174,6 +1226,9 @@ body.open {
             border-bottom: none;
             padding: 17px;
             border-top: none;
+            @include breakpoints(xs) {
+                padding: 10px 5px;
+            }
         }
         tbody {
             border: 1px solid $gray-color;

@@ -847,9 +847,6 @@ body.open {
   display: flex;
   align-items: center;
   justify-content: center;
-  -ms-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
-  -o-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
-  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 .order .container .box h1 {
   color: #ff5e00;
@@ -899,6 +896,7 @@ body.open {
 }
 .order .container .draw {
   margin: 30px 0;
+  display: flex;
 }
 .order .container .draw .shape {
   background: #f8f8f8;
@@ -1342,10 +1340,37 @@ body.open {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-order .dliverd .img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .dliverd .img {
+    width: 90px;
+    height: 90px;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .dliverd .img {
     width: 75px;
     height: 75px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-order .dliverd {
+    gap: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-order .dliverd {
+    gap: 10px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .dliverd {
+    gap: 10px;
   }
 }
 .main-order .card {
@@ -1369,6 +1394,21 @@ body.open {
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .card .head ul li {
     font-size: 13px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .card .head ul li {
+    font-size: 11px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .card .head {
+    padding: 13px 0;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .card .head {
+    padding: 12px 0;
   }
 }
 .main-order .card .details {
@@ -1415,6 +1455,16 @@ body.open {
     font-size: 13px;
   }
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .deposit .head {
+    padding: 13px 0;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .deposit .head {
+    padding: 12px 0;
+  }
+}
 .main-order .deposit .card-info {
   padding: 15px 10px;
   display: flex;
@@ -1426,6 +1476,7 @@ body.open {
 .main-order .deposit .card-info h5 {
   color: #000;
   font-size: 16px;
+  border-bottom: 0;
 }
 .main-order .deposit .card-info .input {
   display: flex;
@@ -1446,8 +1497,25 @@ body.open {
 .main-order .deposit .card-info .input input::placeholder {
   color: #000;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .deposit .card-info .input {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .deposit .card-info .input {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .deposit .card-info {
+    flex-direction: column;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .deposit .card-info {
     flex-direction: column;
   }
 }
@@ -1467,6 +1535,18 @@ body.open {
 }
 .main-order .deposit .number::placeholder {
   color: #000;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .deposit .number {
+    padding: 0 5px;
+    width: 95%;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .deposit .number {
+    padding: 0 5px;
+    width: 95%;
+  }
 }
 .main-order .table {
   margin: 10px 0;
@@ -1491,6 +1571,11 @@ body.open {
   border-bottom: none;
   padding: 17px;
   border-top: none;
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .table th {
+    padding: 10px 5px;
+  }
 }
 .main-order .table tbody {
   border: 1px solid #707070;
