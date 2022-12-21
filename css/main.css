@@ -376,7 +376,7 @@ input[type=number] {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar .container .navbar-menu .list li {
-    padding: 0px 10px;
+    padding: 0 10px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -752,11 +752,20 @@ body.open {
     justify-content: center;
   }
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .slider .container .text {
+    width: 100%;
+    padding: 40px 0 20px;
+    text-align: center;
+    order: 2;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .slider .container .text {
     width: 100%;
-    padding: 40px 0;
+    padding: 40px 0 20px;
     text-align: center;
+    order: 2;
   }
 }
 .slider .container .img {
@@ -787,7 +796,8 @@ body.open {
 }
 @media (min-width: 0) and (max-width: 576px) {
   .slider {
-    padding: 0;
+    display: flex;
+    padding: 30px 10px;
   }
 }
 
@@ -871,6 +881,11 @@ body.open {
   height: 20px;
 }
 @media (min-width: 0) and (max-width: 576px) {
+  .coming-soon .container .box h1::after {
+    top: 20px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
   .coming-soon .container .box h1 {
     font-size: 35px;
   }
@@ -885,6 +900,16 @@ body.open {
 @media (min-width: 0) and (max-width: 576px) {
   .coming-soon .container {
     flex-direction: column;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .coming-soon {
+    padding: 35px 0;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .coming-soon {
+    padding: 35px 0;
   }
 }
 
@@ -918,7 +943,7 @@ body.open {
 .order .container .box h1::after {
   content: "";
   position: absolute;
-  top: 30px;
+  top: 25px;
   left: -3px;
   width: 3px;
   background: #fff;
@@ -936,15 +961,15 @@ body.open {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .order .container .box {
-    width: 90%;
-    height: 150px;
+    width: 55%;
+    height: 135px;
     font-size: 15px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .order .container .box {
-    width: 90%;
-    height: 150px;
+    width: 80%;
+    height: 135px;
     font-size: 15px;
   }
 }
@@ -1078,7 +1103,7 @@ body.open {
 }
 .footer .social a {
   color: #ff5e00 !important;
-  padding: 10px 10px;
+  padding: 10px;
   transition: all 0.4s;
 }
 .footer .social a:hover {
@@ -1426,7 +1451,7 @@ body.open {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main-order .dliverd .items h2::before {
-    right: 70px;
+    right: 65px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
@@ -1467,14 +1492,15 @@ body.open {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main-order .dliverd .img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .dliverd .img {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 50px;
+    margin-top: 50px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1538,7 +1564,7 @@ body.open {
   gap: 60px;
 }
 .main-order .card .details li {
-  padding: 5px 5px;
+  padding: 5px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -1620,6 +1646,7 @@ body.open {
   .main-order .deposit .card-info .input {
     flex-direction: column;
     width: 100%;
+    gap: 30px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
@@ -1711,6 +1738,18 @@ body.open {
   border-top: none;
   font-weight: 500;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-order .table td {
+    font-size: 12px;
+    padding: 5px 2px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-order .table td {
+    padding: 0;
+    font-size: 12px;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .table td {
     padding: 0;
@@ -1745,23 +1784,23 @@ body.open {
   align-items: center;
   margin: 0 auto;
 }
-.main-order .total-price .text,
-.main-order .total-price .price {
+.main-order .total-price .price,
+.main-order .total-price .text {
   height: 50px;
   width: 300px;
   display: flex;
   background: #ff5e00;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main-order .total-price .text,
-.main-order .total-price .price {
+  .main-order .total-price .price,
+.main-order .total-price .text {
     height: 40px;
     width: 150px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main-order .total-price .text,
-.main-order .total-price .price {
+  .main-order .total-price .price,
+.main-order .total-price .text {
     height: 40px;
     width: 150px;
   }
