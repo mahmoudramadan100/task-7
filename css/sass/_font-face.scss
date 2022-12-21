@@ -1,19 +1,21 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url("../../font/Cairo-Regular.ttf") format('truetype');
+    font-family: 'cairo';
+    src: url("../../font/Cairo-Regular.otf");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url("../../font/Cairo-Medium.ttf") format('truetype');
+    font-family: 'cairo';
+    src: url("../../font/Cairo-Medium.otf") format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'cairo';
-    src: url("../../font/Cairo-Bold.ttf") format('truetype');
+    src: url("../../font/Cairo-Bold.otf") format('truetype');
     font-weight: 700;
     font-style: normal;
 }
+
+// format('truetype');

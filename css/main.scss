@@ -1,17 +1,33 @@
 @use "sass/index" as *;
 
-
-// .scroll-top {
-//     position: fixed;
-//     bottom: 20px;
-//     left: 10px;
-//     border: none;
-//     background-color: $main-color;
-//     color: $black-color;
-//     padding: 10px;
-//     cursor: pointer;
-//     display: none;
-// }
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    border: none;
+    background-color: $main-color;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: move-up 2s infinite;
+    @include vendor-prefix(transition, all 0.3s);
+    .icon {
+        @include vendor-prefix(transition, all 0.3s);
+    }
+        &:hover {
+            cursor: pointer;
+            .icon {
+                color: $white-color;
+                // animation: move-up 2s infinite;
+            }
+        }
+}
 
 // Start Up-navbar
 .up-navbar {
@@ -30,6 +46,10 @@
                 color: $main-color;
                 font-weight: 700;
                 font-size: 15px;
+                border-bottom: 0;
+                @include breakpoints(xs) {
+                    font-size: 13px;
+                }
             }
         }
         .link {
@@ -38,6 +58,7 @@
             a {
                 color: $black-color;
                 font-size: 14px;
+                padding: 0 5px;
             }
             .active {
                 color: $main-color;
@@ -49,20 +70,33 @@
 // STart Navbar
 .navbar {
     background-color: $white-color;
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 0;
     margin: 0;
-     @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px); 
+   z-index: 999;
+    @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
     .container {
         height: 90px;
         display: flex;
         justify-content: space-between;
         justify-items: center;
         .logo {
-           max-height: 110px;
-           max-width: 110px;
-           object-fit: contain;
+            max-height: 110px;
+            max-width: 110px;
+            object-fit: contain;
+            @include breakpoints(md) {
+                max-height: 85px;
+                max-width: 85px;
+            }
+            @include breakpoints(sm) {
+                max-height: 80px;
+                max-width: 80px;
+            }
+            @include breakpoints(xs) {
+                max-height: 80px;
+                max-width: 80px;
+            }
         }
         .navbar-menu {
             display: flex;
@@ -71,12 +105,21 @@
             align-items: center;
             .list {
                 display: flex;
-                height: 100%;
+                height: 90px;
                 li {
                     padding: 0 60px;
                     height: 100%;
                     display: flex;
                     align-items: center;
+                    @include breakpoints(md) {
+                        padding: 0px 10px;
+                    }
+                    @include breakpoints(sm) {
+                        padding: 15px 60px;
+                    }
+                    @include breakpoints(xs) {
+                        padding: 15px 60px;
+                    }
                 }
                 a {
                     color: #000;
@@ -86,7 +129,7 @@
                     display: flex;
                     align-items: center;
                     position: relative;
-                    @include vendor-prefix( transation, all 0.4s); 
+                    @include vendor-prefix(transation, all 0.4s);
                     &::after {
                         content: "";
                         position: absolute;
@@ -95,11 +138,37 @@
                         width: 0;
                         height: 4px;
                         background-color: $main-color;
-                        @include vendor-prefix( transition, all 0.4s);
+                        @include vendor-prefix(transition, all 0.4s);
+                        @include breakpoints(sm) {
+                            bottom: -10px;
+                        }
+                        @include breakpoints(xs) {
+                            bottom: -10px;
+                        }
                     }
                     &:hover::after {
-                       width: 100%;
+                        width: 100%;
                     }
+                    @include breakpoints(sm) {
+                        color: $main-color;
+                        &:hover {
+                            color: $white-color;
+                        }
+                    }
+                    @include breakpoints(xs) {
+                        color: $main-color;
+                        &:hover {
+                            color: $white-color;
+                        }
+                    }
+                }
+                @include breakpoints(sm) {
+                    height: auto;
+                    flex-direction: column;
+                }
+                @include breakpoints(xs) {
+                    height: auto;
+                    flex-direction: column;
                 }
             }
             .list-call {
@@ -111,40 +180,196 @@
                     padding: 3px 12px;
                     background-color: $main-color;
                     border-radius: 50px;
-                    @include vendor-prefix( transition, all 0.4s);
+                    @include vendor-prefix(transition, all 0.4s);
                     a {
                         color: #fff;
                         font-size: 14px;
                         font-weight: 500;
-                     }
-                     &:hover {
+                    }
+                    &:hover {
                         transform: translateY(-5px);
-                     }
+                    }
                 }
                 li:first-child {
                     background: linear-gradient(90deg, rgba(255,154,16,1) 23%, rgba(255,107,12,1) 58%);
                 }
-               
-                 
+                @include breakpoints(sm) {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                @include breakpoints(xs) {
+                    flex-direction: column;
+                    gap: 20px;
+                }
             }
-
+            @include breakpoints(sm) {
+                height: 100%;
+                z-index: 999;
+                display: flex;
+                justify-content: flex-start;
+                padding-top: 20%;
+            }
+            @include breakpoints(xs) {
+                height: 100%;
+                z-index: 999;
+                display: flex;
+                justify-content: flex-start;
+                padding-top: 20%;
+            }
         }
-        
+        @include breakpoints(sm) {
+            flex-direction: row;
+            height: 65px;
+        }
+        @include breakpoints(xs) {
+            flex-direction: row;
+            height: 65px;
+        }
     }
 }
 .navbar-scroll {
+    position: fixed;
+    width: 100%;
     top: 0;
     transition: all 0.3s;
     z-index: 999;
 }
+
+@media only screen and (min-width: 767px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 0 0 0 16px;
+    }
+}
+.navbar-overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+body.open .navbar-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar-overlay {
+        display: none;
+    }
+}
+.navbar-burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    align-items: center;
+    color: $main-color;
+}
+.navbar-burger:hover {
+    cursor: pointer;
+    color: $main-color-alt;
+}
+.navbar-burger:focus {
+    outline: none;
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar-burger {
+        display: none;
+    }
+}
+.navbar-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.navbar-menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    translate: -100% 0;
+    width: 270px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: $black-color;
+    visibility: hidden;
+    transition: translate 0.3s;
+}
+
+body.open .navbar-menu {
+    translate: 0 0;
+    visibility: visible;
+}
+body.open {
+    overflow: hidden;
+}
+@media only screen and (min-width: 767px) {
+    .navbar-menu {
+        position: static;
+        translate: 0 0;
+        width: auto;
+        background: transparent;
+        flex-direction: row;
+        visibility: visible;
+    }
+}
+.navbar-menu > button {
+    color: rgba(182, 55, 55, 0.5);
+    background: transparent;
+    padding: 0 8px;
+}
+
+.navbar-menu > button.active {
+    color: inherit;
+}
+.close {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    color: $main-color;
+    font-size: 20px;
+    opacity: 1;
+    display: none;
+    @include vendor-prefix(transition, all 0.3s);
+    &:hover {
+        color: $white-color;
+        @include vendor-prefix(transform, rotate(360deg));
+        opacity: 1;
+    }
+    @include breakpoints(sm) {
+        display: block;
+    }
+    @include breakpoints(xs) {
+        display: block;
+    }
+}
 // Start Slider 
 .slider {
-    padding: 140px 0 40px;
+    padding: 60px 0 40px;
     .container {
         display: flex;
         .text {
             width: 50%;
-            padding: 50px 30px 0 ;
+            padding: 50px 30px 0;
             text-align: right;
             h1 {
                 font-size: 25px;
@@ -157,6 +382,10 @@
             .choose {
                 padding-right: 50px;
                 padding-top: 35px;
+                @include breakpoints(xs) {
+                    padding-right: 0;
+                    padding-top: 40px;
+                }
             }
             h4 {
                 font-size: 22px;
@@ -177,14 +406,14 @@
                         color: #a3a3a3;
                         font-size: 33px;
                         display: block;
-                        @include vendor-prefix( transition, all 0.4s);
+                        @include vendor-prefix(transition, all 0.4s);
                         &:hover {
                             color: $main-color-alt;
-                        } 
+                        }
                     }
                     span {
                         text-align: center;
-                        color: #a3a3a3 ;
+                        color: #a3a3a3;
                         font-size: 12px;
                     }
                 }
@@ -193,18 +422,41 @@
                         color: $main-color;
                     }
                 }
+                @include breakpoints(xs) {
+                    margin-top: 20px;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+            @include breakpoints(xs) {
+                width: 100%;
+                padding: 50px 0;
+                text-align: center;
             }
         }
         .img {
             width: 50%;
-            background: url(../img/bg-slider.png) no-repeat;
+            background: url("../img/bg-slider.png") no-repeat;
             background-size: contain;
+            background-position-y: center;
+            animation: move-up 10s infinite;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                animation: move-up 4s infinite;
+            }
+            @include breakpoints(xs) {
+                width: 100%;
             }
         }
+        @include breakpoints(xs) {
+            flex-direction: column;
+        }
+    }
+    @include breakpoints(xs) {
+        padding: 0;
     }
 }
 // End Slider
@@ -233,7 +485,7 @@
             a {
                 color: $gray-color;
                 font-size: 16px;
-                @include vendor-prefix( transition, all 0.4s);
+                @include vendor-prefix(transition, all 0.4s);
                 &:hover {
                     color: $main-color;
                 }
@@ -259,7 +511,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
+            @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
             h1 {
                 color: #ff5e00;
                 position: relative;
@@ -298,9 +550,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
+            @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
             h1 {
-                color: #ff5e00;
+                color: $main-color;
                 position: relative;
                 width: 90%;
                 height: 50%;
@@ -346,8 +598,8 @@
                 box-sizing: border-box;
                 -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
                 clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
-                @include vendor-prefix( box-shadow, rgba(100, 100, 111, 0.2) 0px 7px 29px 0px);
-                
+                @include vendor-prefix(box-shadow, rgba(100, 100, 111, 0.2) 0 7px 29px 0);
+
                 .one {
                     width: 136px;
                     height: 136px;
@@ -376,12 +628,12 @@
             color: $white-color;
             font-weight: 400;
             padding: 5px 35px;
-            font-size: 25px;
+            font-size: 22px;
             text-align: center;
             margin: 0 auto;
             display: block;
             border-radius: 50px;
-            @include vendor-prefix( transition, all 0.4s);
+            @include vendor-prefix(transition, all 0.4s);
             border: 2px solid transparent;
             &:hover {
                 border: 2px solid $main-color;
@@ -399,8 +651,10 @@
     .container {
         width: 60%;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
         gap: 30px;
         .main {
             text-align: right;
@@ -412,10 +666,14 @@
             ul {
                 margin: 20px 0;
                 li {
-                    padding: 0px 0;
+                    padding: 0;
                     a {
                         color: $white-color;
-                        font-size: 13px;
+                        font-size: 15px;
+                        @include vendor-prefix(transition, all 0.4s);
+                        &:hover {
+                            color: $main-color;
+                        }
                     }
                 }
             }
@@ -424,10 +682,43 @@
     .social {
         display: flex;
         flex-direction: row;
-            a {
-                color: $main-color;
-                padding: 0 5px;
-            }
+        a {
+            color: $main-color !important;
+            padding: 10px 10px;
+            @include vendor-prefix(transition, all 0.4s);
+                &:hover {
+                    color: $white-color !important;
+                }
+        }
+    }
+    input {
+        outline: none;
+        padding: 7px 10px;
+        background-color: $white-color;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        width: 100%;
+        &:foucs {
+            outline: none;
+            border: 1px solid $main-color-alt;
+        }
+    }
+    .send {
+        background: #ff5e00;
+        max-width: 100%;
+        padding: 8px 0 !important;
+        font-size: 16px !important;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 15px;
+        a {
+            color: $white-color !important;
+            text-align: center;
+        }
     }
     .share {
         padding: 40px 0 0;
@@ -458,6 +749,10 @@
                 a {
                     color: $main-color;
                     font-size: 16px;
+                    @include vendor-prefix(transition, all 0.4s);
+                    &:hover {
+                        color: $white-color !important;
+                    }
                 }
             }
         }
@@ -473,6 +768,485 @@
         a {
             color: $white-color;
             font-weight: 400;
+            @include vendor-prefix(transition, all 0.4s);
+            &:hover {
+                color: $main-color;
+            }
         }
+    }
+}
+// End footer
+
+// .slider .swiper-button-prev:after, .slider .swiper-rtl .swiper-button-next:after {
+//     content: "\f053";
+// }
+// .slider .swiper-button-next:after, .slider .swiper-button-prev:after {
+//     font-family: "Font Awesome 5 Free";
+//     font-size: var(--swiper-navigation-size);
+//     text-transform: none !important;
+//     letter-spacing: 0;
+//     font-variant: initial;
+//     line-height: 1;
+//     font-weight: 900;
+//     font-size: 20px;
+//     color: #fff;
+//     padding: 40px 12px;
+//     background-color: #353743;
+// }
+// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
+//     left: 2px;
+//     right: auto;
+// }
+// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
+//     left: auto;
+//     right: 2px;
+// }
+// .slider .swiper-button-next, .slider .swiper-button-prev {
+//     z-index: 999;
+// }
+
+
+///////////////////////////////////
+////// Start Order-Page ///////////
+///////////////////////////////////
+.main-order {
+    padding: 50px 0;
+    .menu-order {
+        margin: 20px 0;
+        background: $main-color;
+        height:350px;
+        ul {
+            padding: 60px 0;
+            li {
+                padding: 7px 15px 7px 0;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                .icon {
+                    padding-left: 10px;
+                    font-size: 25px;
+                    @include vendor-prefix(transition, all 0.3s);
+                }
+                a {
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 500;
+                    transition: all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    @include vendor-prefix(transition, all 0.3s);
+                    @include breakpoints(sm) {
+                        font-size: 14px;
+                    }
+                    @include breakpoints(xs) {
+                        font-size: 12px;
+                    }
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: #fff;
+                    width: 0;
+                    height: 4px;
+                    left: 0;
+                    top: 50%;
+                    @include vendor-prefix(transition, all 0.3s);
+                    @include breakpoints(sm) {
+                        display: none;
+                    }
+                    @include breakpoints(xs) {
+                        display: none;
+                    }
+                }
+                &:hover:after {
+                    width: 30px;
+                }
+                &:hover {
+                    .icon {
+                        color: $main-color-alt;
+                    }
+                }
+                @include breakpoints(xs) {
+                    padding: 4px 0;
+                }
+            }
+            .active {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: #fff;
+                    width: 30px;
+                    height: 4px;
+                    left: 0;
+                    top: 50%;
+                    @include vendor-prefix(transition, all 0.3s);
+                    @include breakpoints(sm) {
+                        display: none;
+                    }
+                    @include breakpoints(xs) {
+                        display: none;
+                    }
+                }
+            }
+            @include breakpoints(sm) {
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            @include breakpoints(xs) {
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+        }
+        @include breakpoints(sm) {
+            margin: 0;
+            height: auto;
+        }
+        @include breakpoints(xs) {
+            margin: 0;
+            height: auto;
+        }
+    }
+    @include breakpoints(sm) {
+        padding: 0;
+    }
+    @include breakpoints(xs) {
+        padding: 0;
+    }
+
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $black-color;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                width: 75px;
+                right: 0;
+                height: 3px;
+                background-color: $black-color ;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                width: 15%;
+                left: -30px;
+                height: 3px;
+                background-color: $main-color ;
+            }
+        }
+        a {
+            color : $white-color;
+            background-color: $main-color;
+            padding: 5px 15px;
+            font-size: 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            @include vendor-prefix(transition, all 0.4s);
+            &:hover {
+                border: 1px solid $main-color;
+                background-color: $main-color-alt;
+            }
+        }
+        @include breakpoints(sm) {
+            padding: 20px 0;
+        }
+        @include breakpoints(xs) {
+            padding: 20px 0;
+        }
+    }
+    .dliverd {
+       margin: 50px 0;
+       display: flex;
+       justify-content: center;
+       gap: 40px;
+       .items {
+        counter-increment: count;
+        h2 {
+            font-size: 15px;
+            text-align: center;
+            // font-weight: 600;
+            position: relative;
+            &::after {
+                content: "" counter(count);
+                position: absolute;
+                left: 0;
+                right: 0;
+                background: #00a651;
+                color: #fff;
+                text-align: center;
+                bottom: -65px;
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                font-weight: 600;
+                font-size: 20px;
+                @include breakpoints(xs) {
+                    bottom: -35px;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 10px;
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -42px;
+                right: 100px;
+                height: 3px;
+                width: 100%;
+                background: #00a651;
+                @include breakpoints(xs) {
+                    display: none;
+                }
+            }
+            @include breakpoints(xs) {
+               font-size: 12px;
+            }
+        }
+        .after-none {
+            &::before {
+                display: none;
+            }
+        }
+       }
+       .img {
+        width: 150px;
+        height: 150px;
+        margin-top: 90px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @include breakpoints(xs) {
+            width: 75px;
+            height: 75px;
+        }
+       }
+    }
+    .card {
+        margin-bottom: 5px;
+        .head {
+            background-color: $main-color;
+            padding: 17px 0;
+            ul {
+                display: flex;
+                justify-items: center;
+                justify-content: flex-start;
+                li {
+                    color: $white-color;
+                    padding: 0 20px;
+                    font-weight: 400;
+                    font-size: 15px;
+                    @include breakpoints(xs){
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .details {
+            border: 1px solid $gray-color;
+            border-top: 1px solid transparent;
+            padding: 10px 7px;
+            display: flex;
+            gap: 60px;
+            li {
+                padding: 5px 5px;
+                font-size: 16px;
+                font-weight: 500;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: contain;
+                }
+                @include breakpoints(xs){
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .deposit {
+        border: 1px solid $gray-color;
+            border-top: 1px solid transparent;
+            padding-bottom: 15px;
+        .head {
+            background-color: $main-color;
+            padding: 17px 0;
+            h3 {
+                color: $white-color;
+                font-size: 15px;
+                display: block;
+                text-align: center;
+                margin-bottom: 0;
+                @include breakpoints(xs){
+                    font-size: 13px;
+                }
+               }
+        }
+        .card-info {
+            padding: 15px 10px;
+            display: flex;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 25px;
+            h5 {
+                color: $black-color;
+                font-size: 16px;
+            }
+            .input {
+                display: flex;
+                gap: 10px;
+                width: 60%;
+                input {
+                    border: none;
+                    border-bottom: 1px solid #a5a5a5;
+                    width: 100%;
+                    &::placeholder {
+                        color: $black-color
+                    }
+                }
+                @include breakpoints(xs) {
+                    flex-direction: column;
+                }
+            }
+        }
+        .number {
+            display: flex;
+            justify-items: center;
+            width: 300px;
+            border: none;
+            border-bottom: 1px solid #a5a5a5 ;
+            margin: 15px auto;
+            &::placeholder {
+                color: $black-color
+            }
+        }
+        
+    }
+    .table {
+        margin: 10px 0;
+        border: 1px solid $gray-color;
+        border-top: 1px solid transparent;
+        tr {
+            border: none;
+        }
+        thead {
+            background: $main-color;
+            color: $white-color;
+            font-weight: 600;
+            margin: 0;
+            @include breakpoints(xs){
+                font-size: 10px;
+            }
+            
+        }
+        th {
+            border-bottom: none;
+            padding: 17px;
+            border-top: none;
+        }
+        tbody {
+            border: 1px solid $gray-color;
+            border-top: 1px solid transparent;
+            @include breakpoints(xs) {
+                font-size: 10px;
+            }
+        }
+        td {
+        padding: 9px 17px;
+        vertical-align: middle;
+        border-top: none;
+        font-weight: 500;
+        @include breakpoints(xs) {
+            padding: 0;
+        }
+    }
+    }
+    .total-price {
+        margin: 20px 0;
+        text-align: center;
+        .total {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h3 {
+                color: $white-color;
+                background-color: $main-color;
+                font-size: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+            span {
+                color: $black-color;
+                text-align: center;
+                font-size: 15px;
+                color: $black-color;
+                font-size: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+            
+        }
+        .text,
+        .price {
+            height: 50px;
+            width: 300px;
+            display: flex;
+            background: $main-color;
+            @include breakpoints(sm) {
+                height: 40px;
+                width: 150px
+            }
+            @include breakpoints(xs) {
+                height: 40px;
+                width: 150px
+            }
+        }
+        .price {
+            background: $white-color;
+            border: 1px solid $gray-color;
+            @include vendor-prefix(transition , all 0.3s);
+            &:hover {
+                background-color: $main-color-alt;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main-color {
+    color: $main-color;
+}
+.padding-custom {
+    @include breakpoints(sm) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+    @include breakpoints(xs) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
     }
 }
