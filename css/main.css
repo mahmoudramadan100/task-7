@@ -1207,6 +1207,18 @@ body.open {
   outline: none;
   border: 1px solid #ff9e66;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer input {
+    padding: 2px 15px;
+    width: 90%;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .footer input {
+    padding: 2px 15px;
+    width: 90%;
+  }
+}
 .footer .send {
   background: #ff5e00;
   max-width: 100%;
@@ -1225,6 +1237,20 @@ body.open {
 .footer .send a {
   color: #fff !important;
   text-align: center;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer .send {
+    max-width: 90%;
+    padding: 3px 0 !important;
+    font-size: 14px !important;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .footer .send {
+    max-width: 90%;
+    padding: 3px 0 !important;
+    font-size: 14px !important;
+  }
 }
 .footer .share {
   padding: 40px 0 0;
@@ -1362,6 +1388,11 @@ body.open {
   font-size: 25px;
   transition: all 0.3s;
 }
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .menu-order ul li .icon {
+    font-size: 30px;
+  }
+}
 .main-order .menu-order ul li a {
   color: #fff;
   font-size: 16px;
@@ -1379,6 +1410,11 @@ body.open {
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .menu-order ul li a {
     font-size: 10px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main-order .menu-order ul li a span {
+    display: none;
   }
 }
 .main-order .menu-order ul li::after {
@@ -1445,10 +1481,12 @@ body.open {
 }
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .menu-order ul {
-    padding: 10px 0;
+    padding: 0;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 45px;
+    align-items: center;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -1460,10 +1498,11 @@ body.open {
 @media (min-width: 0) and (max-width: 576px) {
   .main-order .menu-order {
     margin: 0;
-    height: auto;
+    height: 45px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0px -1px 4px 1px #5c5656;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {

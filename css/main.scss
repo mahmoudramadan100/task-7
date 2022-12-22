@@ -847,6 +847,14 @@ body.open {
             outline: none;
             border: 1px solid $main-color-alt;
         }
+        @include breakpoints(sm) {
+            padding: 2px 15px;
+            width: 90%;
+        }
+        @include breakpoints(xs) {
+            padding: 2px 15px;
+            width: 90%;
+        }
     }
     .send {
         background: #ff5e00;
@@ -865,6 +873,16 @@ body.open {
         a {
             color: $white-color !important;
             text-align: center;
+        }
+        @include breakpoints(sm) {
+            max-width: 90%;
+            padding: 3px 0 !important;
+            font-size: 14px !important;
+        }
+        @include breakpoints(xs){
+            max-width: 90%;
+            padding: 3px 0 !important;
+            font-size: 14px !important;
         }
     }
     .share {
@@ -992,6 +1010,9 @@ body.open {
                     padding-left: 10px;
                     font-size: 25px;
                     @include vendor-prefix(transition, all 0.3s);
+                    @include breakpoints(xs){
+                        font-size: 30px;
+                    }
                 }
                 a {
                     color: #fff;
@@ -1006,6 +1027,11 @@ body.open {
                     }
                     @include breakpoints(xs) {
                         font-size: 10px;
+                    }
+                    span {
+                        @include breakpoints(xs){
+                            display: none;
+                        }
                     }
                 }
                 &::after {
@@ -1062,10 +1088,12 @@ body.open {
                 flex-wrap: wrap;
             }
             @include breakpoints(xs) {
-                padding: 10px 0;
+                padding: 0;
                 display: flex;
                 justify-content: space-around;
                 flex-wrap: wrap;
+                height: 45px;
+                align-items: center;
             }
         }
         @include breakpoints(sm) {
@@ -1077,10 +1105,11 @@ body.open {
         }
         @include breakpoints(xs) {
             margin: 0;
-            height: auto;
+            height: 45px;
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0px -1px 4px 1px #5c5656;
         }
     }
     @include breakpoints(sm) {
