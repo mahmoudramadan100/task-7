@@ -2,7 +2,7 @@
 
 .scroll-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 55px;
     left: 10px;
     border: none;
     background-color: $main-color;
@@ -29,6 +29,12 @@
     }
 }
 
+.main-color {
+    color: $main-color;
+}
+.gray-color {
+   color: $gray-color;
+}
 // Start Up-navbar
 .up-navbar {
     background-color: #f1f5f7;
@@ -532,7 +538,30 @@ body.open {
             align-items: flex-start;
             width: 100%;
             gap: 15px;
-            padding: 10px 0;
+            padding: 10px 5px;
+            .like {
+                display: flex;
+                gap: 0;
+            }
+            button {
+                outline: none;
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    color: $gray-color;
+                    font-size: 16px;
+                    cursor: pointer;
+                    @include vendor-prefix(transition, all 0.4s);
+                    &:hover {
+                        color: $black-color;
+                    }
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                    color: $main-color;
+                }
+            }
             a {
                 color: $gray-color;
                 font-size: 16px;
@@ -553,8 +582,13 @@ body.open {
                     background-color: $main-color-alt;
                 }
             }
+            @include breakpoints(sm) {
+                width: 80%;
+                justify-content: space-between;
+            }
             @include breakpoints(xs) {
                 width: 80%;
+                justify-content: space-between;
             }
         }
         .box {
@@ -779,9 +813,11 @@ body.open {
         }
         @include breakpoints(sm) {
             gap: 10px;
+            width: 90%;
         }
         @include breakpoints(xs) {
             gap: 10px;
+            width: 90%;
         }
     }
     .social {
@@ -919,11 +955,19 @@ body.open {
         }
     }
     @include breakpoints(sm) {
+        padding: 30px 0 70px;
+    }
+    @include breakpoints(xs) {
+        padding: 30px 0 70px;
+    }
+}
+.footer-home {
+    @include breakpoints(sm) {
         padding: 30px 0;
     }
     @include breakpoints(xs) {
         padding: 30px 0;
-    }
+    }  
 }
 // End footer
 
@@ -936,6 +980,7 @@ body.open {
         margin: 20px 0;
         background: $main-color;
         height: 350px;
+        z-index: 999;
         ul {
             padding: 60px 0;
             li {
@@ -1026,10 +1071,16 @@ body.open {
         @include breakpoints(sm) {
             margin: 0;
             height: auto;
+            // position: fixed;
+            // bottom: 0;
+            // width: 100%;
         }
         @include breakpoints(xs) {
             margin: 0;
             height: auto;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     }
     @include breakpoints(sm) {

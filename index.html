@@ -133,7 +133,10 @@
                 <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
                     <i class="fas fa-bars"></i>
                 </button>
-                <img src="img/logo.png" class="logo navbar-title" alt="logo-navbar">
+                 <a href="#">
+                    <img src="img/logo.png" class="logo navbar-title" alt="logo-navbar">
+                 </a>
+              
                 <div class="navbar-menu">
                     <div class="close" onclick="toggleMenuOpen()">
                         <i class="fas fa-times"></i>
@@ -231,8 +234,6 @@
                             <img src="img/slider-img.png" alt="img-slider">
                         </div>
                     </div>
-                    <!-- <img src="img/slider-img.png" alt="img-slider"> -->
-
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -254,12 +255,14 @@
                         </h1>
                     </div>
                     <div class="add">
-                        <a href="#">
-                            <i class="fas fa-thumbs-up"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-thumbs-down"></i>
-                        </a>
+                        <div class="like">
+                            <button id="like-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+                            <button id="dislike">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
+                        </div>
                         <a href="#" class="suggest">
                             اضافه مقترح
                         </a>
@@ -272,12 +275,14 @@
                         </h1>
                     </div>
                     <div class="add">
-                        <a href="#">
-                            <i class="fas fa-thumbs-up"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-thumbs-down"></i>
-                        </a>
+                        <div class="like">
+                            <button id="like-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+                            <button id="dislike">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
+                        </div>
                         <a href="#" class="suggest">
                             اضافه مقترح
                         </a>
@@ -290,12 +295,14 @@
                         </h1>
                     </div>
                     <div class="add">
-                        <a href="#">
-                            <i class="fas fa-thumbs-up"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-thumbs-down"></i>
-                        </a>
+                        <div class="like">
+                            <button id="like-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+                            <button id="dislike">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
+                        </div>
                         <a href="#" class="suggest">
                             اضافه مقترح
                         </a>
@@ -329,7 +336,7 @@
         </div>
         <!-- End Order -->
         <!-- Start Footer -->
-        <div class="footer">
+        <div class="footer footer-home">
             <div class="container">
                 <div class="main">
                     <h5>عن قطعة سيارتى</h5>

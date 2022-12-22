@@ -231,7 +231,7 @@ input[type=number] {
 }
 .scroll-top {
   position: fixed;
-  bottom: 20px;
+  bottom: 55px;
   left: 10px;
   border: none;
   background-color: #ff5e00;
@@ -256,6 +256,14 @@ input[type=number] {
 }
 .scroll-top:hover .icon {
   color: #fff;
+}
+
+.main-color {
+  color: #ff5e00;
+}
+
+.gray-color {
+  color: #707070;
 }
 
 .up-navbar {
@@ -850,7 +858,30 @@ body.open {
   align-items: flex-start;
   width: 100%;
   gap: 15px;
-  padding: 10px 0;
+  padding: 10px 5px;
+}
+.coming-soon .container .add .like {
+  display: flex;
+  gap: 0;
+}
+.coming-soon .container .add button {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  color: #707070;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.coming-soon .container .add button:hover {
+  color: #000;
+}
+.coming-soon .container .add button:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: #ff5e00;
 }
 .coming-soon .container .add a {
   color: #707070;
@@ -872,9 +903,16 @@ body.open {
   color: #fff;
   background-color: #ff9e66;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .coming-soon .container .add {
+    width: 80%;
+    justify-content: space-between;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .coming-soon .container .add {
     width: 80%;
+    justify-content: space-between;
   }
 }
 .coming-soon .container .box {
@@ -1132,11 +1170,13 @@ body.open {
 @media (min-width: 576px) and (max-width: 767px) {
   .footer .container {
     gap: 10px;
+    width: 90%;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .footer .container {
     gap: 10px;
+    width: 90%;
   }
 }
 .footer .social {
@@ -1279,11 +1319,22 @@ body.open {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .footer {
-    padding: 30px 0;
+    padding: 30px 0 70px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .footer {
+    padding: 30px 0 70px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer-home {
+    padding: 30px 0;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .footer-home {
     padding: 30px 0;
   }
 }
@@ -1295,6 +1346,7 @@ body.open {
   margin: 20px 0;
   background: #ff5e00;
   height: 350px;
+  z-index: 999;
 }
 .main-order .menu-order ul {
   padding: 60px 0;
@@ -1409,6 +1461,9 @@ body.open {
   .main-order .menu-order {
     margin: 0;
     height: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {

@@ -42,3 +42,25 @@ var swiper = new Swiper(".imgSlider", {
         clickable: true,
     }
 });
+
+// var likeIcon = document.getElementById('#like-icon');
+// var dislike = document.getElementById('#dislike');
+
+
+// likeIcon.addEventListener('click', function() {
+  
+//     if (dislike.classList.contains('main-color')) {
+//         dislike.classList.remove('gray-color');
+//     } 
+//   this.classList.toggle('main-color');
+  
+// });
+
+// dislike.addEventListener('click', function() {
+  
+//     if (likeIcon.classList.contains('main-color')) {
+//         likeIcon.classList.remove('gray-color');
+//     } 
+//   this.classList.toggle('main-color');
+  
+// });
