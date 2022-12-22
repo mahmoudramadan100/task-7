@@ -319,7 +319,7 @@ body.open .navbar-overlay {
     translate: -100% 0;
     width: 270px;
     height: 100%;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     gap: 8px;
     flex-direction: column;
@@ -424,7 +424,7 @@ body.open {
                     border-left: 1px solid #8a8a8a;
                     a {
                         color: #a3a3a3;
-                        font-size: 33px;
+                        font-size: 25px;
                         display: block;
                         @include vendor-prefix(transition, all 0.4s);
                         &:hover {
