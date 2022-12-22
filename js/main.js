@@ -28,10 +28,17 @@ btn.onclick = function() {
 
 const toggleMenuOpen = () => document.body.classList.toggle("open");
 
-var swiper = new Swiper(".img", {
+
+var swiper = new Swiper(".imgSlider", {
     cssMode: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
+    },
+    mousewheel: true,
+    keyboard: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     }
 });

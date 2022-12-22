@@ -379,6 +379,7 @@ body.open {
 // Start Slider 
 .slider {
     padding: 60px 0 40px;
+    position: relative;
     .container {
         display: flex;
         .text {
@@ -471,6 +472,7 @@ body.open {
             background: url("../img/bg-slider.png") no-repeat;
             background-size: contain;
             background-position-y: center;
+            position: relative;
             animation: move-up 10s infinite;
             img {
                 width: 100%;
@@ -478,13 +480,23 @@ body.open {
                 object-fit: contain;
                 animation: move-up 4s infinite;
             }
-            @include breakpoints(xs) {
-                width: 100%;
+            @include breakpoints(sm) {
+                width: 90%;
             }
+            @include breakpoints(xs) {
+                width: 90%;
+            }
+        }
+        @include breakpoints(sm) {
+            flex-direction: column;
         }
         @include breakpoints(xs) {
             flex-direction: column;
         }
+    }
+    @include breakpoints(sm) {
+        display: flex;
+        padding: 30px 10px;
     }
     @include breakpoints(xs) {
         display: flex;
@@ -494,7 +506,7 @@ body.open {
 // End Slider
 // Start Comming Soon
 .coming-soon {
-    padding: 70px 0;
+    padding: 70px 0 20px;
     .container {
         display: flex;
         justify-content: space-between;
@@ -582,16 +594,16 @@ body.open {
         }
     }
     @include breakpoints(sm) {
-        padding: 35px 0;
+        padding: 35px 0 20px;
     }
     @include breakpoints(xs) {
-        padding: 35px 0;
+        padding: 35px 0 20px;
     }
 }
 // End Comming-soon
 // Start Orader
 .order {
-    padding: 70px 0;
+    padding: 20px 0 40px;
     .container {
         display: flex;
         flex-direction: column;
@@ -707,6 +719,12 @@ body.open {
             }
         }
     }
+    @include breakpoints(large) {
+        padding: 30px 0;
+    }
+    @include breakpoints(md) {
+        padding: 10px 0;
+    }
     @include breakpoints(xs) {
         padding: 10px 0;
     }
@@ -748,6 +766,9 @@ body.open {
                     }
                 }
             }
+        }
+        @include breakpoints(large) {
+            grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
         }
         @include breakpoints(sm) {
             gap: 10px;
@@ -811,19 +832,44 @@ body.open {
         align-items: center;
         justify-content: center;
         color: $main-color;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 37%;
+            height: 3px;
+            right: 0;
+            bottom: 13px;
+            background: #ff5e00;
+            @include breakpoints(xlarge) {
+                width: 35%;
+            }
+            @include breakpoints(large) {
+                width: 31%;
+            }
+            @include breakpoints(md) {
+                width: 25%;
+            }
+            @include breakpoints(sm) {
+                display: none;
+            }
+            @include breakpoints(xs) {
+                display: none;
+            }
+        }
         h5 {
             // display: inline-block;
             position: relative;
             font-size: 14px;
-            &::before {
-                content: "";
-                position: absolute;
-                width: 254%;
-                height: 3px;
-                left: 100px;
-                top: 50%;
-                background: #ff5e00;
-            }
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     width: 254%;
+            //     height: 3px;
+            //     left: 100px;
+            //     top: 50%;
+            //     background: #ff5e00;
+            // }
         }
         ul {
             display: flex;
@@ -838,6 +884,14 @@ body.open {
                     }
                 }
             }
+        }
+        @include breakpoints(sm) {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+        @include breakpoints(xs) {
+            flex-direction: column;
+            padding: 20px 0;
         }
     }
     .copyright {
@@ -866,33 +920,7 @@ body.open {
 }
 // End footer
 
-// .slider .swiper-button-prev:after, .slider .swiper-rtl .swiper-button-next:after {
-//     content: "\f053";
-// }
-// .slider .swiper-button-next:after, .slider .swiper-button-prev:after {
-//     font-family: "Font Awesome 5 Free";
-//     font-size: var(--swiper-navigation-size);
-//     text-transform: none !important;
-//     letter-spacing: 0;
-//     font-variant: initial;
-//     line-height: 1;
-//     font-weight: 900;
-//     font-size: 20px;
-//     color: #fff;
-//     padding: 40px 12px;
-//     background-color: #353743;
-// }
-// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
-//     left: 2px;
-//     right: auto;
-// }
-// .slider .swiper-button-prev, .slider .swiper-rtl .swiper-button-next {
-//     left: auto;
-//     right: 2px;
-// }
-// .slider .swiper-button-next, .slider .swiper-button-prev {
-//     z-index: 999;
-// }
+
 
 ///////////////////////////////////
 ////// Start Order-Page ///////////
@@ -927,7 +955,7 @@ body.open {
                         font-size: 14px;
                     }
                     @include breakpoints(xs) {
-                        font-size: 12px;
+                        font-size: 10px;
                     }
                 }
                 &::after {
@@ -1201,8 +1229,11 @@ body.open {
                     height: 40px;
                     object-fit: contain;
                 }
+                @include breakpoints(sm) {
+                    font-size: 12px;
+                }
                 @include breakpoints(xs) {
-                    font-size: 13px;
+                    font-size: 11px;
                 }
             }
         }
@@ -1220,6 +1251,9 @@ body.open {
                 display: block;
                 text-align: center;
                 margin-bottom: 0;
+                @include breakpoints(sm) {
+                    font-size: 13px;
+                }
                 @include breakpoints(xs) {
                     font-size: 13px;
                 }
@@ -1370,7 +1404,10 @@ body.open {
                 align-items: center;
                 margin: 0 auto;
             }
-
+            .border-price {
+                border-top: 1px solid transparent;
+                // border: 1px solid red;
+            }
         }
         .price,
         .text {
@@ -1411,4 +1448,89 @@ body.open {
         padding-right: 0 !important;
         padding-left: 0 !important;
     }
+}
+
+
+.slider .swiper-button-next:after, .slider .swiper-button-prev:after {
+
+    font-size: 20px;
+    color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @include breakpoints(xs) {
+    font-size: 10px;
+}
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background: $main-color;
+    border-radius: 50%;
+    @include breakpoints(md) {
+        height: 45px;
+        width: 45px;
+    }
+    @include breakpoints(sm) {
+        height: 35px;
+        width: 35px;
+        top: 24%;
+    }
+    @include breakpoints(xs) {
+        height: 25px;
+        width: 25px;
+        top: 25%;
+    }
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 30px;
+    right: auto;
+    @include breakpoints(large) {
+        left: 10px;
+    }
+    @include breakpoints(md) {
+        left: 10px;
+    }
+    @include breakpoints(sm) {
+        left: 2px;
+    }
+    @include breakpoints(xs) {
+        left: 2px;
+    }
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 30px;
+    left: auto;
+    @include breakpoints(large) {
+        right: 10px;
+    }
+    @include breakpoints(md) {
+        right: 10px;
+    }
+    @include breakpoints(sm) {
+        right: 2px;
+    }
+    @include breakpoints(xs) {
+        right: 2px;
+    }
+}
+.swiper-slide.swiper-slide-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.swiper-pagination-bullet {
+    background: $main-color-alt;
+    width: 12px;
+    height: 12px;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: $main-color;
 }
