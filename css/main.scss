@@ -927,8 +927,6 @@ body.open {
 }
 // End footer
 
-
-
 ///////////////////////////////////
 ////// Start Order-Page ///////////
 ///////////////////////////////////
@@ -1457,21 +1455,21 @@ body.open {
     }
 }
 
-
-.slider .swiper-button-next:after, .slider .swiper-button-prev:after {
+.slider .swiper-button-next:after,
+.slider .swiper-button-prev:after {
 
     font-size: 20px;
     color: #fff;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   @include breakpoints(xs) {
-    font-size: 10px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoints(xs) {
+        font-size: 10px;
+    }
 }
 
-
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
     position: absolute;
     top: 50%;
     width: 60px;
@@ -1493,7 +1491,8 @@ body.open {
         top: 25%;
     }
 }
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
     left: -30px;
     right: auto;
     @include breakpoints(large) {
@@ -1509,7 +1508,8 @@ body.open {
         left: -2px;
     }
 }
-.swiper-button-next, .swiper-rtl .swiper-button-prev {
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
     right: -30px;
     left: auto;
     @include breakpoints(large) {
@@ -1531,7 +1531,10 @@ body.open {
     justify-content: center;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
     bottom: -20px;
     @include breakpoints(sm) {
         bottom: -10px;
