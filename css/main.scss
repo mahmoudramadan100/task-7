@@ -50,18 +50,27 @@
             height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
             h3 {
                 text-align: center;
                 color: $main-color;
                 font-weight: 700;
                 font-size: 15px;
                 margin-bottom: 0;
+                @include breakpoints(sm) {
+                    font-size: 13px;
+                }
                 @include breakpoints(xs) {
                     font-size: 11px;
                 }
             }
+            @include breakpoints(sm) {
+                // width: calc(100% - 160px);
+                justify-content: right;
+            }
             @include breakpoints(xs) {
                 width: calc(100% - 160px);
+                justify-content: right;
             }
         }
         .link {
@@ -1631,3 +1640,7 @@ body.open {
     opacity: 1;
     background: $main-color;
 }
+
+
+
+

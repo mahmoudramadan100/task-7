@@ -1,6 +1,8 @@
 
 let btn = document.querySelector('.scroll-top');
 let navbar = document.querySelector('.navbar');
+// let car = document.querySelector('.cars-pagination li');
+// let imgCar = document.querySelector('.swiper-slide');
 
 // Show Scroll Top Btn
 window.onscroll = function() {
@@ -28,6 +30,10 @@ btn.onclick = function() {
     });
 }
 
+// car.onclick = function(){
+//     this.classList.toggle("active");
+// }
+
 
 //NAVBAR MENU Mobile
 const toggleMenuOpen = () => document.body.classList.toggle("open");
@@ -44,6 +50,6 @@ var swiper = new Swiper(".imgSlider", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-    }
+    },
+    freeMode: true,
 });
-

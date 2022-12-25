@@ -282,6 +282,7 @@ input[type=number] {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .up-navbar .container .text h3 {
   text-align: center;
@@ -290,14 +291,25 @@ input[type=number] {
   font-size: 15px;
   margin-bottom: 0;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .up-navbar .container .text h3 {
+    font-size: 13px;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .up-navbar .container .text h3 {
     font-size: 11px;
   }
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  .up-navbar .container .text {
+    justify-content: right;
+  }
+}
 @media (min-width: 0) and (max-width: 576px) {
   .up-navbar .container .text {
     width: calc(100% - 160px);
+    justify-content: right;
   }
 }
 .up-navbar .container .link {
