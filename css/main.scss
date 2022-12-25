@@ -149,7 +149,7 @@
                     display: flex;
                     align-items: center;
                     position: relative;
-                    @include vendor-prefix(transation, all 0.4s);
+                    @include vendor-prefix(transition, all 0.4s);
                     &::after {
                         content: "";
                         position: absolute;
@@ -199,7 +199,7 @@
                 li {
                     padding: 3px 12px;
                     background-color: $main-color;
-                    border-radius: 50px;
+                    @include vendor-prefix(border-radius, 50px);
                     @include vendor-prefix(transition, all 0.4s);
                     a {
                         color: #fff;
@@ -251,7 +251,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    transition: all 0.3s;
+    @include vendor-prefix(transition, all 0.3s);
     z-index: 999;
 }
 
@@ -271,7 +271,7 @@
     background: rgba(0, 0, 0, 0.5);
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s;
+    @include vendor-prefix(transition, all 0.3s);
 }
 
 body.open .navbar-overlay {
@@ -332,7 +332,7 @@ body.open .navbar-overlay {
     align-items: flex-start;
     background: $black-color;
     visibility: hidden;
-    transition: translate 0.3s;
+    @include vendor-prefix(transition, all 0.3s);
 }
 
 body.open .navbar-menu {
@@ -1018,7 +1018,6 @@ body.open {
                     color: #fff;
                     font-size: 16px;
                     font-weight: 500;
-                    transition: all 0.3s;
                     display: flex;
                     align-items: center;
                     @include vendor-prefix(transition, all 0.3s);
