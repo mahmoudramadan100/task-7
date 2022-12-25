@@ -1,8 +1,8 @@
-// let section = document.querySelector('.section-3');
-// let span = document.querySelector('.section-3 span');
+
 let btn = document.querySelector('.scroll-top');
 let navbar = document.querySelector('.navbar');
 
+// Show Scroll Top Btn
 window.onscroll = function() {
     if (window.scrollY >= 100)  {
         navbar.classList.add('navbar-scroll');
@@ -18,6 +18,9 @@ window.onscroll = function() {
     }
 };
 
+
+
+// Scroll Top Smooth
 btn.onclick = function() {
    scroll({
         top: 0,
@@ -26,9 +29,10 @@ btn.onclick = function() {
 }
 
 
+//NAVBAR MENU Mobile
 const toggleMenuOpen = () => document.body.classList.toggle("open");
 
-
+// Slider
 var swiper = new Swiper(".imgSlider", {
     cssMode: true,
     navigation: {
@@ -43,24 +47,3 @@ var swiper = new Swiper(".imgSlider", {
     }
 });
 
-// var likeIcon = document.getElementById('#like-icon');
-// var dislike = document.getElementById('#dislike');
-
-
-// likeIcon.addEventListener('click', function() {
-  
-//     if (dislike.classList.contains('main-color')) {
-//         dislike.classList.remove('gray-color');
-//     } 
-//   this.classList.toggle('main-color');
-  
-// });
-
-// dislike.addEventListener('click', function() {
-  
-//     if (likeIcon.classList.contains('main-color')) {
-//         likeIcon.classList.remove('gray-color');
-//     } 
-//   this.classList.toggle('main-color');
-  
-// });
