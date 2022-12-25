@@ -28,10 +28,39 @@ btn.onclick = function() {
 
 const toggleMenuOpen = () => document.body.classList.toggle("open");
 
-var swiper = new Swiper(".img", {
+
+var swiper = new Swiper(".imgSlider", {
     cssMode: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
+    },
+    mousewheel: true,
+    keyboard: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     }
 });
+
+// var likeIcon = document.getElementById('#like-icon');
+// var dislike = document.getElementById('#dislike');
+
+
+// likeIcon.addEventListener('click', function() {
+  
+//     if (dislike.classList.contains('main-color')) {
+//         dislike.classList.remove('gray-color');
+//     } 
+//   this.classList.toggle('main-color');
+  
+// });
+
+// dislike.addEventListener('click', function() {
+  
+//     if (likeIcon.classList.contains('main-color')) {
+//         likeIcon.classList.remove('gray-color');
+//     } 
+//   this.classList.toggle('main-color');
+  
+// });
